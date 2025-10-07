@@ -125,19 +125,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-
 import os
 
-# Templates directory (for HTML files)
 TEMPLATES[0]['DIRS'] = [os.path.join(BASE_DIR, 'templates')]
 
-# Static files (for CSS, JS, Images)
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'assets')]
 STATIC_URL = '/static/'
 
-
-
-
+# Add this line for Render deployment
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # Email Configuration (for contact form)
@@ -147,3 +143,4 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'contact.adharsh26@gmail.com'        # 👈 replace with your Gmail ID
 EMAIL_HOST_PASSWORD = 'vqys asnr efjm vigb'  # 👈 use Gmail App Password
+
