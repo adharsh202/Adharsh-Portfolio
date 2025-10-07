@@ -1,18 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Adharsh | Data Scientist Portfolio</title>
+
+  <!-- ✅ Correct static file linking -->
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  <script src="{% static 'js/script.js' %}"></script>
+  <script defer src="{% static 'js/script.js' %}"></script>
 
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   />
 </head>
+
 <body>
   {% if messages %}
     {% for message in messages %}
@@ -81,19 +84,21 @@
     <h2>Projects</h2>
     <div class="project-grid">
       <a href="#" class="project-card" target="_blank">
-        <img src="assets/project1.png" alt="Project 1 Logo" />
+        <img src="{% static 'images/project1.png' %}" alt="Project 1 Logo" />
         <h3>Cybersecurity Platform</h3>
       </a>
       <a href="#" class="project-card" target="_blank">
-        <img src="assets/project2.png" alt="Project 2 Logo" />
+        <img src="{% static 'images/project2.png' %}" alt="Project 2 Logo" />
         <h3>Crypto Prediction System</h3>
       </a>
       <a href="#" class="project-card" target="_blank">
-        <img src="assets/project3.png" alt="Project 3 Logo" />
+        <img src="{% static 'images/project3.png' %}" alt="Project 3 Logo" />
+
         <h3>Data Analysis Dashboard</h3>
       </a>
       <a href="#" class="project-card" target="_blank">
-        <img src="assets/project4.png" alt="Project 4 Logo" />
+        <img src="{% static 'images/project4.png' %}" alt="Project 4 Logo" />
+
         <h3>Marketing Insights Tool</h3>
       </a>
     </div>

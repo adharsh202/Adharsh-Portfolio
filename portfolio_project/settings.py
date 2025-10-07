@@ -12,21 +12,13 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 import os
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-5ik)b^-+&^n=_^arlp5g1148f)8u^q9ph1e2*0c5alw89-mwk0'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'assets')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 ALLOWED_HOSTS = ['adharsh26-portfolio.onrender.com', '127.0.0.1', 'localhost']
-
 
 
 # Application definition
