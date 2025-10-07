@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'your-secret-key'
 
 # ⚙️ Toggle DEBUG for local vs production
-DEBUG = False  # ✅ Set True for local testing, False for Render
+DEBUG = False  # ✅ False for Render (True only when testing locally)
 
 ALLOWED_HOSTS = ['adharsh26-portfolio.onrender.com', '127.0.0.1', 'localhost']
 
@@ -28,8 +28,12 @@ INSTALLED_APPS = [
     'portfolio',
 ]
 
+# --------------------------------------------------------------------
+# MIDDLEWARE (Added WhiteNoise for static serving)
+# --------------------------------------------------------------------
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # ✅ Add this line
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -40,6 +44,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'portfolio_project.urls'
 
+# --------------------------------------------------------------------
+# TEMPLATES
+# --------------------------------------------------------------------
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -93,8 +100,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'assets')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+# ✅ WhiteNoise setting for serving static files efficiently
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 # --------------------------------------------------------------------
-# DEFAULTS
+# DEFAULT FIELD TYPE
 # --------------------------------------------------------------------
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
