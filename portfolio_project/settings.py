@@ -125,16 +125,22 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-
 import os
+from pathlib import Path
 
-TEMPLATES[0]['DIRS'] = [os.path.join(BASE_DIR, 'templates')]
+BASE_DIR = Path(__file__).resolve().parent.parent
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'assets')]
+# Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-
-# Add this line for Render deployment
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'assets')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Media (optional — if you add uploads later)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Allow all hosts during testing (you can restrict later)
+ALLOWED_HOSTS = ['adharsh26-portfolio.onrender.com', '127.0.0.1', 'localhost']
 
 
 # Email Configuration (for contact form)
