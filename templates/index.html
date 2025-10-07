@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adharsh | Data Scientist Portfolio</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <script defer src="script.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+<body>
+  {% if messages %}
+    {% for message in messages %}
+      <script>
+        alert("{{ message|escapejs }}");
+      </script>
+    {% endfor %}
+  {% endif %}
+
+  
+  
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Adharsh</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h1 class="name">Adharsh S</h1>
+      <h3 class="title">Data Scientist</h3>
+      <p>
+        Iâ€™m a passionate data scientist with experience in Python, SQL, and
+        Machine Learning. I love building intelligent systems that solve
+        real-world problems.
+      </p>
+      <div class="btn-group">
+        <a href="#portfolio" class="btn">View Portfolio</a>
+        <a href="assets/resume.pdf" class="btn secondary" download>Download Resume</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <!-- Add your photo here -->
+      <div class="photo-placeholder">Your Photo</div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+      Iâ€™m Adharsh, a data scientist with hands-on experience in data analysis,
+      visualization, and model development. I specialize in Python,
+      Scikit-learn, TensorFlow, and data-driven problem solving. I love
+      translating data into actionable insights. Iâ€™m Adharsh, a data scientist with hands-on experience in data analysis,
+      visualization, and model development. I specialize in Python,
+      Scikit-learn, TensorFlow, and data-driven problem solving. I love
+      translating data into actionable insights. Iâ€™m Adharsh, a data scientist with hands-on experience in data analysis,
+      visualization, and model development. I specialize in Python,
+      Scikit-learn, TensorFlow, and data-driven problem solving. I love
+      translating data into actionable insights.
+    </p>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <a href="#" class="project-card" target="_blank">
+        <img src="assets/project1.png" alt="Project 1 Logo" />
+        <h3>Cybersecurity Platform</h3>
+      </a>
+      <a href="#" class="project-card" target="_blank">
+        <img src="assets/project2.png" alt="Project 2 Logo" />
+        <h3>Crypto Prediction System</h3>
+      </a>
+      <a href="#" class="project-card" target="_blank">
+        <img src="assets/project3.png" alt="Project 3 Logo" />
+        <h3>Data Analysis Dashboard</h3>
+      </a>
+      <a href="#" class="project-card" target="_blank">
+        <img src="assets/project4.png" alt="Project 4 Logo" />
+        <h3>Marketing Insights Tool</h3>
+      </a>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog" class="blog">
+    <h2>Blog</h2>
+    <div class="blog-grid">
+      <a href="#" class="blog-card" target="_blank">
+        <img src="assets/blog1.png" alt="Blog 1" />
+        <h3>Understanding Machine Learning Pipelines</h3>
+      </a>
+      <a href="#" class="blog-card" target="_blank">
+        <img src="assets/blog2.png" alt="Blog 2" />
+        <h3>Data Science Career Roadmap</h3>
+      </a>
+      <a href="#" class="blog-card" target="_blank">
+        <img src="assets/blog3.png" alt="Blog 3" />
+        <h3>Top 10 Python Libraries for DS</h3>
+      </a>
+      <a href="#" class="blog-card" target="_blank">
+        <img src="assets/blog4.png" alt="Blog 4" />
+        <h3>Feature Engineering Tips</h3>
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form method="POST" action="">
+      {% csrf_token %}
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+  </section>
+
+  <!-- Social Media Section -->
+  <section id="social" class="social">
+    <h2>Connect with Me</h2>
+    <div class="social-icons">
+      <a href="#" id="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="#" id="linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="#" id="facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="#" id="github" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Â© 2025 Adharsh S | All Rights Reserved</p>
+  </footer>
+</body>
+</html>
