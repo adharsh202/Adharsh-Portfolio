@@ -230,7 +230,7 @@ h2 {
   margin-top: 20px;
 }
 
-.social-icons a {
+/* .social-icons a {
   font-size: 2rem;
   color: #4b0082;
   transition: 0.3s;
@@ -239,7 +239,20 @@ h2 {
 .social-icons a:hover {
   color: #360061;
   transform: scale(1.1);
+} */
+
+
+.social-icons i {
+  font-size: 30px;
+  color: #6a0dad; /* royal purple */
+  margin: 0 15px;
+  transition: color 0.3s ease;
 }
+
+.social-icons i:hover {
+  color: #000000; /* black on hover */
+}
+
 
 /* Footer */
 footer {
@@ -247,4 +260,3 @@ footer {
   color: white;
   padding: 20px;
 }
-
