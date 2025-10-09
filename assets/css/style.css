@@ -242,16 +242,18 @@ h2 {
 } */
 
 
-.social-icons i {
-  font-size: 30px;
+.social-icons a i {
+  font-size: 35px;
   color: #6a0dad; /* royal purple */
   margin: 0 15px;
-  transition: color 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.social-icons i:hover {
-  color: #000000; /* black on hover */
+.social-icons a i:hover {
+  color: #000;
+  transform: scale(1.2);
 }
+
 
 
 /* Footer */
